@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MesterVonal - SOS Duguláselhárítás és Gyorsszolgálat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f39c12;
+            --secondary: #2980b9;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light); color: #333; line-height: 1.6; }
+
+        /* Fix fejléc */
+        header { 
+            background: rgba(255,255,255,0.98); 
+            padding: 10px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--dark); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .header-contact a { display: block; text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.85rem; }
+
+        /* Fő szekció képpel */
+        .hero { 
+            height: 90vh; 
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: var(--white); padding: 0 20px;
+        }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-transform: uppercase; }
+        .area-badge { background: var(--primary); padding: 6px 18px; border-radius: 50px; font-weight: bold; margin-bottom: 20px; font-size: 0.9rem; }
+        
+        .btn { padding: 15px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; display: inline-block; margin: 8px; }
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-secondary { background: var(--secondary); color: var(--white); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        /* Szolgáltatások kártyákkal */
+        .section { padding: 80px 5%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: left; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { height: 180px; background-size: cover; background-position: center; }
+        .card-content { padding: 20px; }
+        .card h3 { margin-bottom: 10px; color: var(--secondary); }
+        .price-tag { background: #fff3e0; color: #e67e22; padding: 8px; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 10px; }
+
+        /* Városlista szekció */
+        .locations { background: #eee; padding: 50px 5%; text-align: center; }
+        .location-tag { display: inline-block; background: white; padding: 6px 12px; margin: 4px; border-radius: 4px; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+        /* Kapcsolat */
+        .contact-section { background: var(--dark); color: var(--white); padding: 60px 5%; text-align: center; }
+        .phone-number { font-size: 2.2rem; color: var(--primary); text-decoration: none; display: block; font-weight: 800; margin: 15px 0; }
+
+        footer { background: #000; color: #777; padding: 20px; text-align: center; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .header-contact { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">MESTER<span>VONAL</span></a>
+        <div class="header-contact">
+            <a href="tel:+36204852558">06 20 485 2558</a>
+            <a href="tel:+36208015093">06 20 801 5093</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="area-badge">BUDAPEST • PEST MEGYE • JÁSZ-NAGYKUN-SZOLNOK</div>
+        <h1>SOS Duguláselhárítás & Gyorsszolgálat</h1>
+        <p>Azonnali indulás, profi eszközök, korrekt árak és garancia minden munkára.</p>
+        <div class="hero-btns">
+            <a href="tel:+36204852558" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Hívás: ...2558</a>
+            <a href="tel:+36208015093" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Hívás: ...5093</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Szolgáltatásaink</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=60')"></div>
+                <div class="card-content">
+                    <h3>Duguláselhárítás</h3>
+                    <p>Gépi spirálozás, lefolyótisztítás bontás nélkül. WC, mosogató szakszerű ürítése.</p>
+                    <div class="price-tag">20.000 Ft alapdíj + 8.500 Ft/m</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=60')"></div>
+                <div class="card-content">
+                    <h3>Villanyszerelés</h3>
+                    <p>Zárlatkeresés, biztosítéktáblák cseréje, SOS hibaelhárítás és hálózatépítés.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=500&q=60')"></div>
+                <div class="card-content">
+                    <h3>Festés & Mázolás</h3>
+                    <p>Minőségi falfestés, glettelés, penészmentesítés és precíz mázolás.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=500&q=60')"></div>
+                <div class="card-content">
+                    <h3>Gipszkartonozás</h3>
+                    <p>Válaszfalak, álmennyezetek, dobozolások és tetőtér beépítés.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1632759162353-c1b8a071c080?auto=format&fit=crop&w=500&q=60')"></div>
+                <div class="card-content">
+                    <h3>Bitumenes Szigetelés</h3>
+                    <p>Lapostetők, teraszok beázás elleni védelme modern technológiával.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=500&q=60')"></div>
+                <div class="card-content">
+                    <h3>Non-Stop Kiszállás</h3>
+                    <p>Hétvégén és ünnepnapokon is számíthat ránk a megadott területeken.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations">
+        <h2>Kiszállási területeink</h2>
+        <div style="margin-top: 20px;">
+            <span class="location-tag">Budapest (minden kerület)</span>
+            <span class="location-tag">Érd</span>
+            <span class="location-tag">Cegléd</span>
+            <span class="location-tag">Vác</span>
+            <span class="location-tag">Gödöllő</span>
+            <span class="location-tag">Dunakeszi</span>
+            <span class="location-tag">Szigetszentmiklós</span>
+            <span class="location-tag">Nagykőrös</span>
+            <span class="location-tag">Szolnok</span>
+            <span class="location-tag">Jászberény</span>
+            <span class="location-tag">Törökszentmiklós</span>
+            <span class="location-tag">Karcag</span>
+            <span class="location-tag">Mezőtúr</span>
+            <span class="location-tag">Tiszafüred</span>
+            <span class="location-tag">Jászapáti</span>
+            <span class="location-tag">Martfű</span>
+            <span class="location-tag">Újszász</span>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Ingyenes árajánlat és szaktanácsadás</h2>
+        <a href="tel:+36204852558" class="phone-number">06 20 485 2558</a>
+        <a href="tel:+36208015093" class="phone-number">06 20 801 5093</a>
+        <p>Hívjon minket bizalommal!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MesterVonal Szolgáltató | Minden jog fenntartva.</p>
+    </footer>
+
+</body>
+</html>
